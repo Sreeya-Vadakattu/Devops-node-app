@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/<your-repo>/devops-app.git'
+                git 'https://github.com/Sreeya-Vadakattu/Devops-node-app.git'
             }
         }
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('devops-app')
+                    docker.build('sreeyav/devops-node-app')
                 }
             }
         }
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 withDockerRegistry([credentialsId: 'dockerhub-creds', url: '']) {
                     script {
-                        docker.image('devops-app').push('latest')
+                        docker.image('sreeyav/devops-node-app').push('latest')
                     }
                 }
             }
