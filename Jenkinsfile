@@ -9,7 +9,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('sreeyav/devops-node-app')
+                    docker.build('sreeyav/Devops-node-app')
                 }
             }
         }
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 withDockerRegistry([credentialsId: 'dockerhub-creds', url: '']) {
                     script {
-                        docker.image('sreeyav/devops-node-app').push('latest')
+                        docker.image('sreeyav/Devops-node-app').push('latest')
                     }
                 }
             }
