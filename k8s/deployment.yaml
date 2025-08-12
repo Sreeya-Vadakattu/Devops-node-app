@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: devops-app
-        image: <your-dockerhub-username>/devops-app:latest
+        image: sreeyav/devops-app:latest
         ports:
         - containerPort: 3000
         resources:
